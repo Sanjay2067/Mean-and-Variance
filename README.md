@@ -16,12 +16,14 @@ The expectation or the mean of a discrete random variable is a weighted average 
 values of the random variable. The weights are the probabilities associated with the corresponding values. 
 It is calculated as,
 
-![image](https://user-images.githubusercontent.com/103921593/192938463-e34177f4-f188-48a0-bda2-8f6d1d660ed2.png)
+![Screenshot 2024-12-15 111240](https://github.com/user-attachments/assets/c53b85ce-9fbc-446f-a830-9d69c1453bd1)
+
 
 The variance of a random variable shows the variability or the scatterings of the random variables.
 It shows the distance of a random variable from its mean. It is calcualted as
 
-![image](https://user-images.githubusercontent.com/103921593/192938695-99fedc01-34d5-4d36-84df-5880e766ed0c.png)
+![Screenshot 2024-12-15 111252](https://github.com/user-attachments/assets/536939ca-7b71-4865-8448-e91768c72ffa)
+
 
 
 # Procedure :
@@ -32,26 +34,54 @@ It shows the distance of a random variable from its mean. It is calcualted as
 
 3. Calculate mean using 
    
-   ![image](https://user-images.githubusercontent.com/103921593/192940431-03b81777-c54d-4286-b4f4-82dfe7666b4c.png)
+  ![Screenshot 2024-12-15 111149](https://github.com/user-attachments/assets/52e5da5f-f307-47fc-888d-d74777d7a5e3)
+
 
 4. Find  
    
-      ![image](https://user-images.githubusercontent.com/103921593/192940255-2d9dd746-6875-4a6d-877b-6da6cdb96ab1.png)
+     ![Screenshot 2024-12-15 111159](https://github.com/user-attachments/assets/1924b4a2-cb8d-42e6-8a71-0c043f020ae1)
+
 
 5.  Calculate variance using 
   
-      ![image](https://user-images.githubusercontent.com/103921593/192942852-913550a9-fabe-4a55-b956-0487b18bbd97.png)
+      ![Screenshot 2024-12-15 111206](https://github.com/user-attachments/assets/86b50a27-63e3-48d0-9ec6-09fd7fac83df)
+
 
 
 # Experiment :
 
-![image](https://user-images.githubusercontent.com/103921593/229993174-5b67e57e-3e01-4ac4-9f83-410a932b22bf.png)
+![Screenshot 2024-12-15 111220](https://github.com/user-attachments/assets/e198464f-1b8c-4a84-ad7a-057ba7eb4002)
+
 
 # Program :
+Developed by : MAGENDRA SANJAY S
+Register number : 24900652
 
-
+import numpy as np
+L=[int(i) for i in input().split()]
+N=len(L); M=max(L) 
+x=list();f=list()
+for i in range (M+1):
+    c = 0
+    for j in range(N):
+        if L[j]==i:
+            c=c+1
+    f.append(c)
+    x.append(i)
+sf=np.sum(f)
+p=list()
+for i in range(M+1):
+    p.append(f[i]/sf) 
+mean=np.inner(x,p)
+EX2=np.inner(np.square(x),p)
+var=EX2-mean**2 
+SD=np.sqrt(var)
+print("The Mean arrival rate is %.3f "%mean)
+print("The Variance of arrival from feeder is %.3f "%var) 
+print("The Standard deviation of arrival from feeder is %.3F "%SD)
 
 # Output : 
+![Screenshot 2024-12-15 111817](https://github.com/user-attachments/assets/e5cccea4-b032-4307-acc2-c1795bd4e49d)
 
 # Results :
 The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
